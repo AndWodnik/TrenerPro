@@ -34,11 +34,12 @@
 
         nav ul {
             list-style: none;
-            text-align: center;
+            display: flex;
+            align-items: center; /* Vertically center align the nav items */
+            justify-content: center; /* Horizontally center align the nav items */
         }
 
         nav ul li {
-            display: inline;
             margin: 0 20px;
         }
 
@@ -49,6 +50,7 @@
 
         .navbar-buttons {
             display: flex;
+            align-items: center; /* Vertically center align the buttons */
             gap: 10px;
         }
 
@@ -61,14 +63,13 @@
 
         section {
             padding-top: 60px; /* Adjusted padding to account for the fixed header */
-            height: calc(100vh - 0px); /* Make the backgrounds taller */
+            height: 100vh; /* Make the backgrounds the full viewport height */
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            align-items: center; /* Center content horizontally */
+            justify-content: center; /* Center content vertically */
             font-size: 24px;
             transition: transform 0.5s;
-            width: 100vw; /* Extend backgrounds by default */
         }
 
         .hero {
@@ -99,7 +100,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#hero"><i class="fas fa-dumbbell"></i></a></li> <!-- Weightlifting icon -->
+                <li><a href="#hero"><i class="fas fa-dumbbell"></i></a></li>
                 <li><a href="#about">O nas</a></li>
                 <li><a href="#services">Funkcjonalności</a></li>
                 <li><a href="#testimonials">Cennik</a></li>
