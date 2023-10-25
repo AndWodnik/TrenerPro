@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Karta ćwiczenia</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="view-title">Karta ćwiczenia</h1>
+        <form method="post">
+            {% csrf_token %}
+            <table class="table">
+                <tr>
+                    <th class="custom-header">ID ćwiczenia</th>
+                    <td class="custom-cell">{{ excercise.id }}</td>
+                </tr>
+                <tr>
+                    <th class="custom-header">Nazwa ćwiczenia</th>
+                    <td class="custom-cell">{{ excercise.Name }}</td>
+                </tr>
+                <tr>
+                    <th class="custom-header">Kategoria</th>
+                    <td class="custom-cell">{{ excercise.Category }}</td>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="custom-header">Główne grupy mięśni</th>
+                    <td class="custom-cell">
+                        {% for muscle in excercise.DirectMus.all %}
+                            {{ muscle.MuscleName }}
+                            {% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>Opis ćwiczenia</th>
+                    <td>
+                        <textarea class="form-control" name="Description" rows="8">{{ excercise.Description }}</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Link do filmu</th>
+                    <td>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="{{ excercise.ExcerciseLinkUrl }}" allowfullscreen></iframe>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <button type="submit" class="btn btn-warning">Zapisz zmiany</button>
+        </form>
+        <a href="{% url 'excercise_list' %}" class="btn btn-secondary mt-2">Powrót do listy ćwiczeń</a>
+    </div>
+
+    <!-- Dodaj linki do Bootstrap JavaScript i jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

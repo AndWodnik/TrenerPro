@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista Ćwiczeń</title>
+    <!-- Dodaj linki do Bootstrap CSS i JavaScript -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Lista Ćwiczeń</h1>
+        
+        <!-- Filtrowanie po kategorii -->
+        <select id="categoryFilter" class="form-control mb-3">
+            <option value="">Wszystkie kategorie</option>
+            <!-- Tutaj możesz wygenerować opcje wyboru na podstawie dostępnych kategorii w bazie danych -->
+            {% for category in categories %}
+                <option value="{{ category.id }}">{{ category.CategoryName }}</option>
+            {% endfor %}
+        </select>
+        
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nazwa ćwiczenia</th>
+                    <th>Grupy mięśni</th>
+                    <th>Kategoria</th>
+                    <th>Opis ćwiczenia</th>
+                    <th>Typ ćwiczenia</th>
+                    <th>Link do filmu</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for excercise in excercises %}
+                <tr>
+                    <td>{{ excercise.Name }}</td>
+                    <td>{{ excercise.muscle_names }}</td>
+                    <td>{{ excercise.Category.CategoryName }}</td>
+                    <td>{{ excercise.Description }}</td>
+                    <td>{{ excercise.Type }}</td>
+                    <td>
+                        {% if excercise.ExcerciseLinkUrl %}
+                            <a href="{{ excercise.ExcerciseLinkUrl }}" target="_blank">Obejrzyj film</a>
+                        {% else %}
+                            Brak linku
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{% url 'edit_excercise' excercise.id %}" class="btn btn-warning">Edytuj</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="5"></td>
+                    <td>
+                        <a href="{% url 'add_excercise' %}" class="btn btn-primary">Dodaj</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5"></td>
+                    <td>
+                        <a href="{% url 'home' %}" class="btn btn-primary">Powrót</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Dodaj linki do Bootstrap JavaScript i jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Obsługa filtrowania
+        $('#categoryFilter').on('change', function() {
+            var category_id = $(this).val();
+            $('tbody tr').each(function() {
+                var category = $(this).find('td:nth-child(2)').text();
+                if (category_id === "" || category_id === category) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

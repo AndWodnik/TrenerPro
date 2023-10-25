@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Informacje o Osobie</title>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Informacje o Osobie</h1>
+        <div>
+            <h2>Imię: {{ person.FirstName }}</h2>
+            <h2>Nazwisko: {{ person.SecondName }}</h2>
+            <p>E-mail: {{ person.Email }}</p>
+            <p>Numer telefonu: {{ person.PhoneNumber }}</p>
+            <div>
+                <img src="{{ person.Photo.url }}" alt="Zdjęcie" style="max-width: 100px;">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

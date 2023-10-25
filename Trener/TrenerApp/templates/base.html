@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trener Personalny PRO - Strona startowa</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f7f7f7; /* Kolor szary */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center; /* Wyśrodkowanie zawartości w poziomie */
+            align-items: center; /* Wyśrodkowanie zawartości w pionie */
+            max-width: 1200px; /* Maksymalna szerokość kontenera */
+            background: #f7f7f7;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container, .login-container, .news-container {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .logo-container h2, .login-container h2, .news-container h2 {
+            text-align: center;
+        }
+
+        /* Dodatkowe style dla innych elementów na stronie */
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="content-container">
+        <div class="logo-container">
+            <h2></h2>
+            <img src="{% static 'images/logo.png' %}" alt="Logo" width="400" height="400">
+        </div>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.username.label_tag }} {{ form.username }}
+                <br>
+                {{ form.password.label_tag }} {{ form.password }}
+                <br>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+        <div class="news-container">
+            <h2>Newsy</h2>
+            <ul>
+                {% for news_item in news_items %}
+                    <li>{{ news_item.NewsText }} (Data: {{ news_item.NewsDate }})</li>
+                {% empty %}
+                    <li>Brak aktualnych newsów.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MODUŁ</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="view-title">Moduł treningowy</h1>
+        
+        <form method="post">
+            {% csrf_token %}
+            <table class="table">
+                <tr>
+                    <th class="custom-header">ID Modułu</th>
+                    <td class="custom-cell">{{ module.id }}</td>
+                </tr>
+                <tr>
+                    <th class="custom-header">Nazwa modułu</th>
+                    <td class="custom-cell">{{ module.Description }}</td>
+                </tr>
+                <tr>
+                    <th class="custom-header">Opis modułu</th>
+                    <td class="custom-cell">{{ module.FullDescription }}</td>
+                </tr>
+                <!-- Tutaj możesz dodać więcej pól, jeśli są dostępne -->
+            </table>
+        </form>
+        
+        <h1 class="view-title">Ćwiczenia w module treningowym</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="custom-header">Nazwa ćwiczenia</th>
+                    <th class="custom-header">Ilość serii</th>
+                    <th class="custom-header">Powtórzenia</th>
+                    <th class="custom-header">Ciężar</th>
+                    <th class="custom-header">Czas trwania (sek)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for module_exercise in exercises %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'edit_excercise' module_exercise.Exercise.id %}">
+                                {{ module_exercise.Exercise.Name }}
+                            </a>
+                        </td>
+                        <td>{{ module_exercise.Series }}</td>
+                        <td>{{ module_exercise.Repetitions }}</td>
+                        <td>{{ module_exercise.Weight }}</td>
+                        <td>{{ module_exercise.Duration }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="5">Brak ćwiczeń w module.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <a href="{% url 'module_list' %}" class="btn btn-secondary mt-2">Powrót do listy modułów</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

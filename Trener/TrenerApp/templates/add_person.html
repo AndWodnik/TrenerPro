@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dodaj Osobę</title>
+    <!-- Dodaj linki do Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="mb-4">Dodaj nową osobę</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {{ form.FirstName.label_tag }}
+                        {{ form.FirstName }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {{ form.SecondName.label_tag }}
+                        {{ form.SecondName }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {{ form.Email.label_tag }}
+                        {{ form.Email }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {{ form.PhoneNumber.label_tag }}
+                        {{ form.PhoneNumber }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        {{ form.Photo.label_tag }}
+                        {{ form.Photo }}
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Dodaj osobę</button>
+        </form>
+        <a href="{% url 'person_list' %}" class="btn btn-secondary mt-2">Powrót do listy osób</a>
+    </div>
+
+    <!-- Dodaj linki do Bootstrap JavaScript i jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

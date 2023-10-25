@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista Osób</title>
+    <!-- Dodaj linki do Bootstrap CSS i JavaScript -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Lista Osób</h1>
+        
+        <!-- Filtrowanie po nazwisku -->
+        <input type="text" id="nameFilter" class="form-control mb-3" placeholder="Filtruj po nazwisku">
+        
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                    <th>E-mail</th>
+                    <th>Numer telefonu</th>
+                    <th>Zdjęcie</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for person in people %}
+                <tr>
+                    <td>{{ person.FirstName }}</td>
+                    <td>{{ person.SecondName }}</td>
+                    <td>{{ person.Email }}</td>
+                    <td>{{ person.PhoneNumber }}</td>
+                    <td>
+                        {% if person.Photo %}
+                            <img src="{{ person.Photo.url }}" alt="Zdjęcie" style="max-width: 100px;">
+                        {% else %}
+                            Brak zdjęcia
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{% url 'person_view' person.id %}">Przejdź</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="text-center">
+            <a href="{% url 'add_person' %}" class="btn btn-success">Dodaj</a>
+            <a href="{% url 'person_list' %}" class="btn btn-secondary">Powrót do listy</a>
+        </div>
+    </div>
+
+    <!-- Dodaj linki do Bootstrap JavaScript i jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Obsługa filtrowania
+        $('#nameFilter').on('input', function() {
+            var filter = $(this).val().toLowerCase();
+            $('tbody tr').each(function() {
+                var name = $(this).find('td:nth-child(2)').text().toLowerCase();
+                if (name.includes(filter)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

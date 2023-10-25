@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trener Personalny PRO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: navy;
+            margin-left: 270px;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #343a40;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #343a40;
+        }
+
+        .sidebar .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar .logo {
+            margin-right: 10px;
+            max-width: 30px;
+        }
+
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #fff;
+            padding: 8px 0;
+        }
+
+        .menu-button {
+            background-color: #4e555b;
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block sidebar">
+                <div class="sidebar-sticky">
+                    <div class="logo-container">
+                        <img class="logo" src="static/images/logo.png" alt="Logo" width="400%" height="400%">
+                    </div>
+                    <div class="section-title">Napis Ćwiczenia</div>
+                    <ul class="nav flex-column ml-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Przycisk 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Przycisk 2</a>
+                        </li>
+                    </ul>
+                    <div class="section-title">Inna Sekcja</div>
+                    <ul class="nav flex-column ml-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Przycisk 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Przycisk 4</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 content">
+                <h1>Trener Personalny PRO</h1>
+                <!-- Tutaj możesz umieścić zawartość główną -->
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".sidebar").addClass("open-nav");
+        });
+    </script>
+</body>
+
+</html>

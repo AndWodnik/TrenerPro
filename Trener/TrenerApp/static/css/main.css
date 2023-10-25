@@ -1,0 +1,39 @@
+/* main.css */
+
+/* Wspólne style dla wszystkich stron */
+body {
+    background-color: #f7f7f7;
+    font-family: Montserrat, sans-serif;
+}
+
+h1 {
+    font-family: Montserrat, sans-serif;
+    font-size: 10px; 
+    color: #97b3dc;
+
+}
+
+h1.view-title {
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    color: #808080;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+a {
+    color: #007bff;
+}
+.custom-header {
+    background-color: #97b3dc; /* Tło nagłówka */
+    font-weight: bold; /* Pogrubiona czcionka */
+}
+
+.custom-cell {
+    background-color: #97b3dc; /* Tło komórki */
+    font-weight: normal; /* Cofnij pogrubienie czcionki */
+}
+
+/* Dodaj tu dodatkowe style */

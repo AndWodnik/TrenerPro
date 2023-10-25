@@ -1,0 +1,7 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ustaw rozmiar wysokości, jaki chcesz */
+    background-color: #343a40; /* Tło kontenera logo */
+}
