@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Coaching Website</title>
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+            margin: 0; /* Remove default margin */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between; /* Align buttons to the right */
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .navbar-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cta-button {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        section {
+            padding-top: 60px; /* Adjusted padding to account for the fixed header */
+            height: calc(100vh - 0px); /* Make the backgrounds taller */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: transform 0.5s;
+            width: 100vw; /* Extend backgrounds by default */
+        }
+
+        .hero {
+            background-color: #3498db;
+            color: #fff;
+            z-index: -1; /* Push the hero section behind the header */
+        }
+
+        .about {
+            background-color: #ef9f91;
+        }
+
+        .services {
+            background-color: #f4d25a;
+        }
+
+        .testimonials {
+            background-color: #8cc7a1;
+        }
+
+        .contact {
+            background-color: #5e648d;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#hero"><i class="fas fa-dumbbell"></i></a></li> <!-- Weightlifting icon -->
+                <li><a href="#about">O nas</a></li>
+                <li><a href="#services">Funkcjonalności</a></li>
+                <li><a href="#testimonials">Cennik</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+        <div class="navbar-buttons">
+            <a href="#" class="cta-button">Register</a>
+            <a href="#" class="cta-button">Login</a>
+        </div>
+    </header>
+    
+    <section class="hero" id="hero">
+        <h1>Welcome to Your Coaching Website</h1>
+        <p>Your path to personal development and growth starts here.</p>
+        <a href="#about" class="cta-button">Get Started</a>
+    </section>
+    
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <p>Big firma big drims come tru allrigight all yes yes hello</p>
+        <a href="#services" class="cta-button">Learn More</a>
+    </section>
+    
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <p>Explore our range of coaching services tailored to your needs.</p>
+        <a href="#testimonials" class="cta-button">See Services</a>
+    </section>
+    
+    <section class="testimonials" id="testimonials">
+        <h2>Testimonials</h2>
+        <p>See what our clients have to say about their coaching experience with us.</p>
+        <a href="#contact" class="cta-button">Contact Us</a>
+    </section>
+    
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or want to get in touch? Contact us here.</p>
+        <a href="#hero" class="cta-button">Back to Top</a>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 Your Coaching Website</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        const sections = document.querySelectorAll('section');
+
+        window.addEventListener('scroll', () => {
+            sections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                    section.style.transform = 'scale(1)';
+                } else {
+                    section.style.transform = 'scale(0.8)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
