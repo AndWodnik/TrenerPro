@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Coaching Website</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
             box-sizing: border-box;
         }
-        .container{
+
+        .container {
             width: 100%;
             height: 100vh;
             overflow-y: scroll;
             scroll-snap-type: y mandatory;
         }
-        .slides{
+
+        .slides {
             width: 100%;
             height: 100vh;
             display: flex;
@@ -27,6 +29,7 @@
             color: #fff;
             background: linear-gradient(454deg, #4f4080, #9553ff);
             scroll-snap-align: start;
+            position: relative;
         }
 
         .slides .text-container {
@@ -36,104 +39,121 @@
             text-align: center;
         }
 
-        .slides img{
+        .slides img {
             width: 350px;
         }
-        .slides h1{
-            font-size: 60px;
-            font-weight: 650;
-            max-width: 1200px;
+
+        .slides h1 {
+            font-size: 40px;
+            font-weight: 600;
+            max-width: 80%;
         }
 
-        .slides h2{
-            font-size: 30px;
-            font-weight: 600;
-            max-width: 950px;
-            text-align: center;
+        .slides h2 {
+            font-size: 24px;
+            max-width: 80%;
         }
-        .slide1{
+
+        .slide1 {
             background: linear-gradient(454deg, #4f4080, #9553ff);
         }
-        .slide2{
+
+        .slide2 {
             background: linear-gradient(454deg, #404c80, #54ff88);
         }
-        .slide3{
+
+        .slide3 {
             background: linear-gradient(454deg, #9574ff, #ff5353);
         }
-        .slide4{
+
+        .slide4 {
             background: linear-gradient(454deg, #1a6001, #939800);
         }
-        .slide5{
+
+        .slide5 {
             background: linear-gradient(454deg, #ce0078, #4f4080);
         }
 
+        /* Navbar Styles */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
-            background: #333; /* Choose a background color for the navbar */
+            padding: 15px 30px; /* Increased the navbar height */
+            background: linear-gradient(454deg, #4f4080, #9553ff);
+            color: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px; /* Increased the navbar height */
         }
 
-        .navbar-logo {
-            color: #fff; /* Choose a color for the logo text */
-            font-size: 24px;
+        .navbar-logo img {
+            width: 50px; /* Adjust the logo width */
         }
 
-        .navbar-menu {
-            list-style: none;
+        .navbar-links {
             display: flex;
             gap: 20px;
+            align-items: center;
+            margin-left: auto;
         }
 
-        .navbar-menu li {
-            color: #fff; /* Choose a color for the menu items */
+        .navbar-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
             font-size: 18px;
         }
 
-        .navbar-login-register {
+        /* Adjust the last anchor's margin-right to prevent overlap with buttons */
+        .navbar-links a:last-child {
+            margin-right: 20px; /* Add right margin to the last link */
+        }
+
+        .navbar-buttons {
             display: flex;
             gap: 20px;
         }
 
-        .navbar-login,
-        .navbar-register {
-            background: #555; /* Choose a background color for the buttons */
-            color: #fff; /* Choose a color for the button text */
-            padding: 10px 20px;
+        .navbar-buttons button {
+            background: #4f4080;
+            color: #fff;
             border: none;
-            border-radius: 5px;
+            padding: 10px 20px; /* Increased the button size */
             cursor: pointer;
         }
-
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <div class="navbar-logo">
-            <img src="logo.png" alt="Your Logo">
-        </div>
-        <ul class="navbar-menu">
-            <li>Home</li>
-            <li>Features</li>
-            <li>Pricing</li>
-            <li>Contact</li>
-        </ul>
-        <div class="navbar-login-register">
-            <button class="navbar-login">Login</button>
-            <button class="navbar-register">Register</button>
-        </div>
-    </div>
-
     <div class="container">
+        <!-- Slides -->
         <div class="slides slide1">
+            <!-- Navbar inside the first slide -->
+            <div class="navbar">
+                <div class="navbar-logo">
+                    <img src="logo.png" alt="Logo">
+                </div>
+                <div class="navbar-links">
+                    <a href="#">Contact</a>
+                    <a href="#">About</a>
+                    <a href="#">Pricing</a>
+                </div>
+                <div class="navbar-buttons">
+                    <button>Register</button>
+                    <button>Login</button>
+                </div>
+            </div>
+
             <img src="trainer.svg">
             <div class="text-container">
                 <h1>Aplikacja dla trenerów personalnych</h1>
                 <h2>Tworzenie planów treningowych oraz komunikacja z klientami nigdy nie była taka prosta.</h2>
             </div>
-        </div>     
+        </div>
         <div class="slides slide2">
+            <!-- Image on the left -->
             <img src="about.svg">
             <div class="text-container">
                 <h1>O nas</h1>
@@ -141,13 +161,15 @@
             </div>
         </div>
         <div class="slides slide3">
+            <!-- Image on the left -->
             <img src="functions.svg">
             <div class="text-container">
                 <h1>Funkcjonalności</h1>
-                <h2>Tu cos mądrego wpisać </h2>
+                <h2>Tu cos mądrego wpisać</h2>
             </div>
         </div>
         <div class="slides slide4">
+            <!-- Image on the left -->
             <img src="pricing.svg">
             <div class="text-container">
                 <h1>Cennik</h1>
@@ -155,6 +177,7 @@
             </div>
         </div>
         <div class="slides slide5">
+            <!-- Image on the left -->
             <img src="contact.svg">
             <div class="text-container">
                 <h1>Kontakt</h1>
