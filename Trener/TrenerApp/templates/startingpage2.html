@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Your Coaching Website</title>
  <style>
     * {
         margin: 0;
         padding: 0;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         box-sizing: border-box;
     }
 
@@ -21,30 +22,30 @@
     }
     .menu-container {
             position: relative;
-        }
+    }
 
-        .hamburger-button {
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-        }
+    .hamburger-button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
 
-        .menu {
-            display: none;
-            position: absolute;
-            top: 30px;
-            right: 10px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 10px;
-        }
+    .menu {
+        display: none;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
 
         /* Style the hamburger icon */
-        .hamburger-icon {
-            width: 30px;
-            height: 30px;
-        }
+    .hamburger-icon {
+        width: 30px;
+        height: 30px;
+    }
 
     /* Common style for the slides */
     .slides {
@@ -66,17 +67,20 @@
     }
 
     .slides h1 {
-        font-size: 2rem; /* Decrease the font size */
+        font-size: 2.5rem; /* Decrease the font size */
         font-weight: 650;
         max-width: 100%;
         text-align: center;
+        color: #5E5136;
     }
-
+    
     .slides h2 {
-        font-size: 1rem; /* Decrease the font size */
+        font-size: 1.5rem; /* Decrease the font size */
         font-weight: 400;
         max-width: 100%;
         text-align: center;
+        color: black;
+        text-align: left;
     }
 
     /* Navbar Styles */
@@ -85,8 +89,8 @@
         justify-content: space-between;
         align-items: center;
         padding: 20px 60px;
-        background: linear-gradient(454deg, #4f4080, #9553ff);
-        color: #fff;
+        background: linear-gradient(454deg, #fff0db, #eed9c4);
+        color: black;
         position: absolute;
         top: 0;
         left: 0;
@@ -108,7 +112,7 @@
 
     .navbar-links a {
         text-decoration: none;
-        color: #fff;
+        color: black;
         font-weight: bold;
         font-size: 1rem;
         position: relative;
@@ -133,7 +137,7 @@
 
     .navbar-links a:hover:after {
         width: 100%;
-        background: #00a532;
+        background: #7100a5;
     }
 
     .navbar-buttons {
@@ -171,7 +175,7 @@
 
     .navbar-list .hamburger-login {
         background: #006400;
-        color: #fff;
+        color: black;
     }
 
     .navbar-list .hamburger-register:hover {
@@ -196,7 +200,7 @@
     .hamburger div {
         width: 30px;
         height: 3px;
-        background-color: #fff;
+        background-color: black;
         margin: 4px 0;
         transition: 0.4s;
     }
@@ -206,11 +210,11 @@
         flex-direction: column;
         align-items: center;
         position: fixed;
-        background: linear-gradient(454deg, #4f4080, #9553ff);
+        background: linear-gradient(454deg, #fff0db, #eed9c4);
         width: 100%;
         top: 0;
         left: 0;
-        padding: 20px;
+        padding: 1px;
         z-index: 1;
         opacity: 0;
         height: 0;
@@ -228,9 +232,10 @@
 
     .navbar-list a {
         text-decoration: none;
-        color: #fff;
+        color: black;
         font-weight: bold;
         font-size: 1rem;
+        margin-bottom: 10px;
     }
 
     .navbar-list a:last-child {
@@ -245,6 +250,7 @@
         cursor: pointer;
         border-radius: 8px;
         font-size: 1rem;
+        margin-bottom: 10px;
     }
 
     .close-icon {
@@ -323,26 +329,27 @@
 
         .slides h2 {
             font-size: 1rem; /* Decrease the font size */
+            text-align: center;
         }
     }
     .button-container {
-            text-align: center; /* Center the content horizontally */
-            margin-top: 20px; /* Add spacing between the <h2> and the button */
-        }
+        text-align: center; /* Center the content horizontally */
+        margin-top: 20px; /* Add spacing between the <h2> and the button */
+    }
 
-        .register-button {
-            background: rgb(254, 192, 47);
-            color: #000;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: background 0.3s ease, color 0.3s ease, filter 0.3s ease;
-        }
+    .register-button {
+        background: rgb(254, 192, 47);
+        color: #000;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: background 0.3s ease, color 0.3s ease, filter 0.3s ease;
+    }
 
-.register-button:hover {
-    filter: brightness(1.2);
-}
+    .register-button:hover {
+        filter: brightness(1.2);
+    }
 
 
     .animated-text {
@@ -368,80 +375,80 @@
     @media (max-width: 768px) {
     /* ... (previous styles) ... */
     
-    .slides.slide4 .text-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: 100%;
-    }
-    
-    .slides.slide4 img {
-        display: none; /* Hide the image on slide4 */
-    }
+        .slides.slide4 .text-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .slides.slide4 img {
+            display: none; /* Hide the image on slide4 */
+        }
 
-    .slides.slide4 h1 {
-        font-size: 1.5rem;
-        position: relative;
-        top: -20px; /* Adjust the top value to move the text higher or lower */
-    }
-    
-    .pricing-table {
-        display: flex;
-        flex-direction: column;
-        justify-content: center; /* Center vertically */
-        align-items: center; /* Center horizontally */
-    }
+        .slides.slide4 h1 {
+            font-size: 1.5rem;
+            position: relative;
+            top: -20px; /* Adjust the top value to move the text higher or lower */
+        }
+        
+        .pricing-table {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+        }
 
-    .pricing-plan {
-        max-width: 90%; /* Adjust the maximum width as needed */
-        margin: 10px auto; /* Center and add margin between tables */
-        text-align: center; /* Center the text */
-    }
+        .pricing-plan {
+            max-width: 60%; /* Adjust the maximum width as needed */
+            margin: 10px auto; /* Center and add margin between tables */
+            text-align: center; /* Center the text */
+        }
 
-    .pricing-plan h3 {
-        font-size: 0.8rem; /* Decrease the font size */
-        margin: 10px 0;
-    }
+        .pricing-plan h3 {
+            font-size: 0.8rem; /* Decrease the font size */
+            margin: 10px 0;
+        }
 
-    .pricing-plan p {
-        font-size: 0.7rem; /* Decrease the font size */
-    }
+        .pricing-plan p {
+            font-size: 0.7rem; /* Decrease the font size */
+        }
 
-    .price {
-        font-size: 1rem; /* Decrease the font size */
-        margin: 10px 0;
-    }
-    
-    .price .currency {
-        font-size: 0.7rem; /* Decrease the font size */
-        vertical-align: top;
-        color: #888;
-    }
+        .price {
+            font-size: 1rem; /* Decrease the font size */
+            margin: 10px 0;
+        }
+        
+        .price .currency {
+            font-size: 0.7rem; /* Decrease the font size */
+            vertical-align: top;
+            color: #888;
+        }
 
-    .price .amount {
-        font-size: 1.3rem; /* Decrease the font size */
-        color: #888;
-    }
+        .price .amount {
+            font-size: 1.3rem; /* Decrease the font size */
+            color: #888;
+        }
 
-    .price .period {
-        font-size: 0.7rem; /* Decrease the font size */
-        vertical-align: top;
-        color: #888;
-    }
+        .price .period {
+            font-size: 0.7rem; /* Decrease the font size */
+            vertical-align: top;
+            color: #888;
+        }
 
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 10px 0;
-    }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
 
-    ul li {
-        font-size: 0.8rem; /* Decrease the font size */
-        margin: 5px 0;
+        ul li {
+            font-size: 0.8rem; /* Decrease the font size */
+            margin: 5px 0;
+        }
     }
-}
     
     .pricing-table {
         display: flex;
@@ -461,12 +468,12 @@
         transition: transform 0.3s ease;
     }
 
-
     .pricing-plan h3 {
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: 600;
         margin: 10px 0;
         color: #888;
+        text-align: center;
     }
 
     .pricing-plan p {
@@ -498,7 +505,6 @@
         color: #888;
     }
     
-
     ul {
         list-style: none;
         padding: 0;
@@ -510,12 +516,11 @@
         margin: 5px 0;
     }
 
-
     button {
         background: #4f4080;
         color: #fff;
         border: none;
-        padding: 8px 16px;
+        padding: 8px 30px;
         cursor: pointer;
         border-radius: 8px;
         font-size: 0.9rem; /* Decrease the font size */
@@ -526,15 +531,44 @@
         filter: brightness(1.2);
     }
 
+    .scroll-to-top-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 40px; /* Reduce the width to make it smaller */
+        height: 40px; /* Reduce the height to make it smaller */
+        background-color: #D0BF9E; /* Darker grey color */
+        border: none;
+        color: #000; /* Text color */
+        font-size: 1rem;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        display: flex;
+        justify-content: center; /* Center text horizontally */
+        align-items: center; /* Center text vertically */
+    }
+    .scroll-to-top-button:hover{
+        background-color: #C6B38D; /* Light grey color on hover */
+        color: #000; /* Text color on hover */
+    }
+
+        /* Ensure the container has relative positioning to make absolute positioning work */
+    .slides {
+        position: relative;
+    }
+
 </style>
 </head>
 <body>
     <div class="container">
-        <div class="slides slide1" style="background: linear-gradient(454deg, #4f4080, #9553ff);">
+        <div class="slides slide1" style="background: linear-gradient(454deg, #fff0db, #eed9c4);">
             <div class="navbar">
                 <div class="navbar-container">
                     <div class="navbar-logo">
-                        <img src="logo.png" alt="Logo">
+                        <a href="#slide1">
+                            <img src="graphics/logo.png" alt="Logo">
+                        </a>
                     </div>
                     <div class="hamburger" onclick="toggleHamburger()">
                         <div></div>
@@ -543,9 +577,10 @@
                     </div>
                 </div>
                 <div class="navbar-links">
-                    <a href="#">Funkcjonalności</a>
-                    <a href="#">Cennik</a>
-                    <a href="#">Kontakt</a>
+                    <a href="#slide2">O nas</a>
+                    <a href="#slide3">Funkcjonalności</a>
+                    <a href="#slide4">Cennik</a>
+                    <a href="#slide5">Kontakt</a>
                 </div>
                 <div class="navbar-buttons">
                     <button>Załóź bezpłatne konto</button>
@@ -553,87 +588,99 @@
                 </div>
                 <div class="navbar-list">
                     <div class="close-icon" onclick="closeHamburger()">&times;</div>
-                    <a href="#">Funkcjonalności</a>
-                    <a href="#">Cennik</a>
-                    <a href="#">Kontakt</a>
+                    <a href="#slide2">O nas</a>
+                    <a href="#slide3">Funkcjonalności</a>
+                    <a href="#slide4">Cennik</a>
+                    <a href="#slide5">Kontakt</a>
                     <div class="hamburger-buttons"></div>
-                        <button class = "hamburger-register">Załóź bezpłatne konto</button>
-                        <button class = "hamburger-login">Zaloguj się</button>
+                        <button class = "hamburger-register" data-zoomable>Załóź bezpłatne konto</button>
+                        <button class = "hamburger-login" data-zoomable>Zaloguj się</button>
                 </div>
             </div>
-            <img src="trainer.svg" class="animated-text" data-zoomable>
+            <img src="graphics/trainer.svg" class="animated-text" data-zoomable>
             <div class="text-container">
-                <h1 class="animated-text">Aplikacja dla trenerów personalnych</h1>
+                <h1 class="animated-text" data-zoomable>Aplikacja dla trenerów personalnych</h1>
                 <h2>Tworzenie planów treningowych oraz komunikacja z klientami nigdy nie była taka prosta.</h2>
+                <h2>Chcesz mieć łatwy dostęp do swoich podopiecznych? Pomożemy Ci!</h2>
                 <div class="button-container">
-                    <button class="register-button">Załóź bezpłatne konto</button>
+                    <button class="register-button" data-zoomable>Załóź bezpłatne konto</button>
                 </div>
             </div>
         </div>
-        <div class="slides slide2" style="background: linear-gradient(454deg, #404c80, #54ff88);">
-            <img src="about.svg" class="animated-text" data-zoomable>
+        <div class="slides slide2" id="slide2" style="background: linear-gradient(454deg, #fff0db, #eed9c4);">
+            <button id="scrollToTopButtonSlide2" class="scroll-to-top-button">⬆</button>
+            <img src="graphics/about.svg" class="animated-text" data-zoomable>
             <div class="text-container">
-                <h1 class="animated-text">O nas</h1>
-                <h2>fajna firma, ciekawy świat, psy gurom</h2>
+                <h1 class="animated-text" data-zoomable>O nas</h1>
+                <h2>Jesteśmy teamem który z wielką chęcią pomoże ci w Twojej pracy jako trener personalny!</h2>
+                <h2>Stworzliśmy rozwiązanie do ułatwienia pracy dla trenerów. Nie wierzysz? Sam się przekonaj!</h2>
             </div>
         </div>
-        <div class="slides slide3" style="background: linear-gradient(454deg, #9574ff, #ff5353);">
-            <img src="functions.svg" class="animated-text" data-zoomable>
+        <div class="slides slide3" id="slide3" style="background: linear-gradient(454deg, #fff0db, #eed9c4);">
+            <button id="scrollToTopButtonSlide3" class="scroll-to-top-button">⬆</button>
+            <img src="graphics/functions.svg" class="animated-text" data-zoomable>
             <div class="text-container">
-                <h1 class="animated-text">Funkcjonalności</h1>
-                <h2>Tu cos mądrego wpisać</h2>
+                <h1 class="animated-text" data-zoomable>Funkcjonalności</h1>
+                <h2>•Łatwy dostęp do progresu swoich podopiecznych.</h2>
+                <h2>•Proste w obsłudze tworzenie planów treningowych</h2>
+                <h2>•Przejrzysta demonstracja ćwiczeń</h2>
             </div>
         </div>
-        <div class="slides slide4" style="background: linear-gradient(454deg, #1a6001, #939800);">
-            <img src="pricing.svg" class="animated-text" data-zoomable>
+        <div class="slides slide4" id="slide4" style="background: linear-gradient(454deg, #fff0db, #eed9c4);">
+            <button id="scrollToTopButtonSlide4" class="scroll-to-top-button">⬆</button>
+            <img src="graphics/pricing.svg" class="animated-text" data-zoomable>
             <div class="text-container">
-                <h1 class="animated-text">Cennik</h1>
+                <h1 class="animated-text" data-zoomable>Cennik</h1>
                 <div class="pricing-container">
                     <div class="pricing-table">
                         <div class="pricing-plan" data-zoomable>
-                            <h3>Basic Plan</h3>
-                            <p>Perfect for individuals</p>
+                            <h3>&nbsp;&nbsp;Plan Start&nbsp;&nbsp;</h3>
+                            <p>Na start</p>
                             <div class="price">
                                 <span class="currency">PLN</span>
                                 <span class="amount">19</span>
-                                <span class="period">/mo</span>
+                                <span class="period">/msc</span>
                             </div>
-                            <button>Select Plan</button>
+                            <button style="background: rgb(67, 114, 255)">Wybierz</button>
                         </div>
                     
                         <div class="pricing-plan" data-zoomable>
-                            <h3>Premium Plan</h3>
-                            <p>Great for businesses</p>
+                            <h3>Plan Middle</h3>
+                            <p>Dla zawodowców</p>
                             <div class="price">
                                 <span class="currency">PLN</span>
                                 <span class="amount">49</span>
-                                <span class="period">/mo</span>
+                                <span class="period">/msc</span>
                             </div>
-                            <button>Select Plan</button>
+                            <button style="background: rgb(67, 114, 255)">Wybierz</button>
                         </div>
                     
                         <div class="pricing-plan" data-zoomable>
-                            <h3>Enterprise Plan</h3>
-                            <p>For large organizations</p>
+                            <h3>Plan Expert</h3>
+                            <p>Dla ekspertów</p>
                             <div class="price">
                                 <span class="currency">PLN</span>
                                 <span class="amount">99</span>
-                                <span class="period">/mo</span>
+                                <span class="period">/msc</span>
                             </div>
-                            <button>Select Plan</button>
+                            <button style="background: rgb(67, 114, 255)">Wybierz</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="slides slide5" style="background: linear-gradient(454deg, #ce0078, #4f4080);">
-            <img src="contact.svg" class="animated-text" data-zoomable>
+        <div class="slides slide5" id="slide5" style="background: linear-gradient(454deg, #fff0db, #eed9c4);">
+            <button id="scrollToTopButtonSlide5" class="scroll-to-top-button">⬆</button>
+            <img src="graphics/contact.svg" class="animated-text" data-zoomable>
             <div class="text-container">
-                <h1 class="animated-text">Kontakt</h1>
+                <h1 class="animated-text" data-zoomable>Kontakt</h1>
                 <h2>Jeśli masz jakieś pytania bądz zalecenia co do aplikacji, tutaj znajdziesz do nas kontakt!</h2>
+                <h2>Chętnie pomożemy Ci z Twoim problemem i zadbamy o Ciebie jak Ty dbasz o swoich podopiecznych.</h2>
             </div>
         </div>
     </div>
+    <!-- SCRIPTS -->
+    <!-- HAMBURGER SCRIPT -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const hamburger = document.querySelector(".hamburger");
@@ -683,6 +730,7 @@
             
         });
     </script>
+    <!-- SCRIPT TO ANIMATE THE IMAGES -->
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 const animatedImages = document.querySelectorAll(".animated-image");
@@ -712,6 +760,19 @@
                 });
             });
         </script>
+        <!-- SCRIPT TO REFRESH TAKING TO SLIDE1 -->
+        <script>
+            // Function to scroll to slide1
+            function scrollToSlide1() {
+                document.querySelector('.slides.slide1').scrollIntoView({
+                    behavior: 'smooth',
+                });
+            }
+        
+            // Scroll to slide1 when the page loads
+            window.addEventListener('load', scrollToSlide1);
+        </script>
+        <!-- SCRIPT TO ANIMATE TEXT -->
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 const animatedText = document.querySelectorAll(".animated-text");
@@ -738,6 +799,7 @@
                 });
             });
         </script>
+        <!-- SCRIPT TO ZOOMABLE THE PICTURES -->
         <script>
             // Function to zoom in on hover
             document.addEventListener("DOMContentLoaded", function () {
@@ -755,6 +817,7 @@
                 });
             });
         </script>
+        <!-- SCRIPT FOR THE PRICING TABLES -->
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 const animatedImages = document.querySelectorAll(".animated-image");
@@ -790,7 +853,102 @@
                 });
             });
         </script>
+        <!-- SCRIPT TO SCROLL, MAKING THE BUTTON TO EVEN WORK -->
+        <script>
+            // Function to scroll to the top
+            function scrollToTop() {
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+              });
+            }
+          
+            // Function to handle scroll events
+            function handleScroll() {
+              const slide2Button = document.getElementById('scrollToTopButtonSlide2');
+              const slide3Button = document.getElementById('scrollToTopButtonSlide3');
+              const slide4Button = document.getElementById('scrollToTopButtonSlide4');
+              const slide5Button = document.getElementById('scrollToTopButtonSlide5');
+          
+              const currentScroll = window.scrollY;
+          
+              // Define the pixel offsets for when to show the button on each slide
+              const slideOffsets = {
+                slide2: 1000, // Adjust as needed
+                slide3: 2000, // Adjust as needed
+                slide4: 3000, // Adjust as needed
+                slide5: 4000, // Adjust as needed
+              };
+          
+              // Check if the current scroll position is within the offset for each slide
+              if (currentScroll < slideOffsets.slide2) {
+                slide2Button.style.display = 'none';
+                slide3Button.style.display = 'none';
+                slide4Button.style.display = 'none';
+                slide5Button.style.display = 'none';
+              } else if (currentScroll < slideOffsets.slide3) {
+                slide2Button.style.display = 'block';
+                slide3Button.style.display = 'none';
+                slide4Button.style.display = 'none';
+                slide5Button.style.display = 'none';
+              } else if (currentScroll < slideOffsets.slide4) {
+                slide2Button.style.display = 'none';
+                slide3Button.style.display = 'block';
+                slide4Button.style.display = 'none';
+                slide5Button.style.display = 'none';
+              } else if (currentScroll < slideOffsets.slide5) {
+                slide2Button.style.display = 'none';
+                slide3Button.style.display = 'none';
+                slide4Button.style.display = 'block';
+                slide5Button.style.display = 'none';
+              } else {
+                slide2Button.style.display = 'none';
+                slide3Button.style.display = 'none';
+                slide4Button.style.display = 'none';
+                slide5Button.style.display = 'block';
+              }
+            }
+          
+            // Add a click event listener to each button
+            const button = document.querySelectorAll('.scroll-to-top-button');
+            buttons.forEach((button) => {
+              button.addEventListener('click', scrollToTop);
+            });
+          
+            // Add a scroll event listener to handle button visibility
+            window.addEventListener('scroll', handleScroll);
+          </script>
+          <!-- SCRIPT FOR SCROLL TO SCROLL TO SLIDE1 -->
+         <script>
+            // Function to scroll to slide1
+            function scrollToSlide1() {
+              document.querySelector('.slides.slide1').scrollIntoView({
+                behavior: 'smooth',
+              });
+            }
+          
+            // Add a click event listener to each button
+            const buttons = document.querySelectorAll('.scroll-to-top-button');
+            buttons.forEach((button) => {
+              button.addEventListener('click', () => {
+                // When a button is clicked, scroll smoothly to slide1
+                scrollToSlide1();
+              });
+            });
+          </script>
+          <!-- SCRIPT TO REFRESH THE PAGE WHILE LOGO CLICKED -->
+          <script>
+            // Function to refresh the page
+            function refreshPage() {
+                location.reload();
+            }
         
-    
+            // Add a click event listener to the logo link
+            const logoLink = document.querySelector(".navbar-logo a");
+            logoLink.addEventListener("click", function (e) {
+                e.preventDefault(); // Prevent the default link behavior
+                refreshPage(); // Refresh the page
+            });
+        </script>
 </body>
 </html>
