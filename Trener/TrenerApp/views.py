@@ -76,6 +76,9 @@ def home(request):
 def temp(request):
     return render(request, 'temp.html')
 
+def startingpage2(request):
+    return render(request, 'startingpage2.html')
+
 
 class CustomLoginView(LoginView):
     template_name = 'registration/login.html'

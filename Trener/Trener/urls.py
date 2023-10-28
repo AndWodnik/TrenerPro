@@ -20,6 +20,7 @@ from django.urls import path
 from TrenerApp import views
 from TrenerApp.views import CustomLoginView
 
+
 urlpatterns = [
     path('', views.home, name='home'),
     path('login/', CustomLoginView.as_view(), name='login'),
@@ -35,4 +36,5 @@ urlpatterns = [
     path('modules/', views.ModuleListView.as_view(), name='module_list'),
     path('module/<int:module_id>/', views.module_detail, name='module_detail'),
     path('module/<int:module_id>/add_exercise/', views.add_module_exercise, name='add_module_exercise'),
+    path('dom/', views.startingpage2, name='startingpage2'),
 ]
