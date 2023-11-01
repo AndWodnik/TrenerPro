@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            padding-top: 20px;
+            color: #fff;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 0;
+            padding: 10px 0; /* Adjust the padding to reduce space */
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            padding: 5px 15px; /* Adjust the padding to reduce space */
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active { /* Style for active (clicked) item */
+            background-color: #555;
+        }
+
+        .submenu {
+            display: none;
+        }
+
+        .submenu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .submenu ul li {
+            margin: 0;
+            padding: 10px 0; /* Adjust the padding to reduce space */
+        }
+
+        .submenu a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            padding: 5px 30px; /* Adjust the padding to reduce space */
+            transition: 0.3s;
+        }
+
+        .submenu a:hover,
+        .submenu a.active { /* Style for active (clicked) item */
+            background-color: #555;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Trener Personalny PRO</h2>
+        <ul>
+            <li>
+                <a href="#" id="klienci">Klienci</a>
+                <div class="submenu">
+                    <ul>
+                        <li><a href="#">Pomiary</a></li>
+                        <li><a href="#">Lista</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Plany treningowe</a></li>
+            <li><a href="#">Biblioteka ćwiczeń</a></li>
+            <li><a href="#">Moduły</a></li>
+            <li><a href="#">Kalendarz</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <!-- Your content goes here -->
+    </div>
+    <script>
+        var links = document.querySelectorAll('.sidebar a');
+        var submenuLinks = document.querySelectorAll('.submenu a');
+        links.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Remove the "active" class from all links
+                links.forEach(function(otherLink) {
+                    otherLink.classList.remove('active');
+                });
+
+                // Add the "active" class to the clicked link
+                link.classList.add('active');
+            });
+        });
+
+        submenuLinks.forEach(function(submenuLink) {
+            submenuLink.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Remove the "active" class from all submenu links
+                submenuLinks.forEach(function(otherSubmenuLink) {
+                    otherSubmenuLink.classList.remove('active');
+                });
+
+                // Add the "active" class to the clicked submenu link
+                submenuLink.classList.add('active');
+            });
+        });
+
+        var klienciLink = document.getElementById('klienci');
+        var submenu = klienciLink.nextElementSibling;
+
+        klienciLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (submenu.style.display === 'block') {
+                submenu.style.display = 'none';
+            } else {
+                submenu.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
